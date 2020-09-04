@@ -12,6 +12,9 @@
   <div class="container">
     <div class="row mt-5">
       <div class="col-md-6 offset-md-3 col-sm-6 offset-sm-3 col-12 comments-main pt-4 rounded">
+        <?php
+
+        ?>
         <ul class="p-0">
           <li>
             <div class="row comments mb-2">
@@ -23,6 +26,21 @@
                 <time class="text-white ml-3">5 天前</time>
                 <like></like>
                 <p class="mb-0 text-white">沒聲音</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <ul class="p-0">
+          <li>
+            <div class="row comments mb-2">
+              <div class="col-md-2 col-sm-2 col-3 text-center user-img">
+                <img id="profile-photo" src="http://nicesnippets.com/demo/man04.png" class="rounded-circle" />
+              </div>
+              <div class="col-md-9 col-sm-9 col-9 comment rounded mb-2">
+                <h4 class="m-0"><a href="#">CCCCC</a></h4>
+                <time class="text-white ml-3">5 天前</time>
+                <like></like>
+                <p class="mb-0 text-white">有了</p>
               </div>
             </div>
           </li>
