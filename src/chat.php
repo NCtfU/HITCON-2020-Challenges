@@ -40,7 +40,7 @@
                 <img id="profile-photo" src="res/%s" class="rounded-circle" />
               </div>
               <div class="col-md-9 col-sm-9 col-9 comment rounded mb-2">
-                <h4 class="m-0"><a href="#">%s</a></h4>
+                <h4 class="m-0"><a href="profile.php?name=%s">%s</a></h4>
                 <time class="text-white ml-3">%s 天前</time>
                 <like></like>
                 <p class="mb-0 text-white">%s</p>
@@ -49,7 +49,7 @@
           </li>
         </ul>
 EOF;
-            printf($fmt, $row['icon'], $row['name'], $row['time'], $msg);
+            printf($fmt, $row['icon'], $row['name'], $row['name'], $row['time'], $msg);
           }
 
           function show_phonecall($row) {
