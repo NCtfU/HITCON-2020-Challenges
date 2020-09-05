@@ -4,8 +4,6 @@ body{
   font-family: 'Raleway', sans-serif;
   background: #E9ECE9;
 }
-
-/* comments */
 .comments-main{
   background: #FFF;
 }
@@ -19,9 +17,6 @@ body{
 .comments .comment {
   padding: 5px 10px;
   background: #00AF90;
-}
-.comments .comment:hover time{
-  opacity: 1;
 }
 .comments .user-img img {
   width: 50px;
@@ -42,6 +37,10 @@ body{
 .comments .comment h4 a {
   color: #404040;
   text-decoration: none;
+}
+.comments .phone {
+  background: #9edbf7;
+  margin-left: 12.5%;
 }
 .comments .comment .icon-rocknroll {
   color: #545454;
@@ -73,13 +72,15 @@ body{
   cursor: pointer;
   margin: 0 .125rem 0 0;
 }
+#phone-icon {
+  width: 10%;
+}
 .comments .comment:hover .icon-rocknroll,.comments .comment:hover .like-count {
   opacity: 1;
 }
 .comment-box-main{
   background: #CA1D5F;
 }
-
 @media (min-width: 320px) and (max-width: 480px){
   .comments .comment h4 {
     font-size: 12px;
@@ -91,37 +92,7 @@ body{
     margin-left: 5px;
   }
 }
-
-/* phone call */
-.comments .phone {
-  background: #9edbf7;
-  margin-left: 12.5%;
-}
-#phone-icon {
-  width: 10%;
-}
-
-/* profile */
-.profile img {
-  padding-left: 20%;
-  width: 100%;
-}
-.info-box {
-  padding-left: 14%;
-  padding-top: 1%;
-}
-.info-box h2 {
-  padding-bottom: 4%;
-}
-.info-box a {
-  color: #404040;
-  text-decoration: none;
-}
-
-/* icon attribute */
-.footer {
-  bottom: 0;
-  position: fixed;
-  font-size: 10px;
-  color: gray;
+.citation {
+   font-size: 10px;
+   color: gray;
 }
