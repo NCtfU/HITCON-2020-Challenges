@@ -66,7 +66,7 @@ EOF;
           </li>
         </ul>
 EOF;
-            printf($fmt, $row['icon'], $row['call_duration'], $row['time'], $msg);
+            printf($fmt, $row['icon'], $row['call_duration'], $row['time']);
           }
 
           // connection
