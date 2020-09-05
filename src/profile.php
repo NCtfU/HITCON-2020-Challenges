@@ -13,7 +13,7 @@
       <div class="col-md-8 offset-md-2 col-sm-8 offset-sm-2 col-12 comments-main pt-4 rounded">
 
         <?php
-
+          if ()
         ?>
 
         <div class="row profile mb-4">
@@ -31,7 +31,7 @@
         <hr>
         <div class="mt-5"></div>
 
-        
+
 
       </div>
     </div>
