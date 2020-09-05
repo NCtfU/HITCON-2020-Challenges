@@ -85,7 +85,7 @@ EOF;
               show_phonecall($row);
             }
           }
-          mysqli_close($con);
+          mysqli_close($conn);
         ?>
 
         <div class="row comment-box-main p-3 rounded-bottom">
@@ -93,10 +93,13 @@ EOF;
             <input type="text" class="form-control" placeholder="comment ...." />
           </div>
           <div class="col-md-3 col-sm-2 col-2 pl-0 text-center send-btn">
-            <button class="btn btn-info" onclick="sendMsg()">Send</button>
+            <button class="btn btn-info">Send</button>
           </div>
         </div>
       </div>
+    <form action='logout.php' method='GET'>
+      <button type='submit' class="btn btn-warning">Logout</button>
+    </form>
     </div>
   </div>
   <p class="ml-3 footer">Icons made by <a href="https://www.flaticon.com/authors/those-icons" title="Those Icons">Those Icons</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a></p>
