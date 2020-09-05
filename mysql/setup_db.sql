@@ -8,6 +8,12 @@ CREATE DATABASE chat;
 -- GRANT ALL PRIVILEGES ON chat.* TO chat@localhost;
 -- FLUSH PRIVILEGES;
 
+CREATE TABLE chat.users (username CHAR(10), password CHAR(10));
+INSERT INTO chat.users VALUES ('admin', 'nc7FU_W3LL');
+INSERT INTO chat.users VALUES ('autis', 'cut3');
+INSERT INTO chat.users VALUES ('david', 'Hand50M3');
+INSERT INTO chat.users VALUES ('yen', '84D_9uy');
+
 ---- Create table
 -- DROP TABLE chat.message;
 CREATE TABLE chat.message (isMessage BOOL, deleted BOOL, icon CHAR(10),

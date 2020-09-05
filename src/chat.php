@@ -1,3 +1,9 @@
+<?php
+
+require_once('config.php');
+
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -69,21 +75,17 @@ EOF;
             printf($fmt, $row['icon'], $row['call_duration'], $row['time']);
           }
 
-          // connection
-          $mysqli = new mysqli("localhost", "chat", "nctfuchat0905hc", "chat");
-          if ($mysqli->connect_error) {
-            printf("Failed to connect to MySQL (%d) %s", $mysqli->connect_errno, $mysqli->connect_error);
-          }
-
           // fetch messages
-          $res = $mysqli->query("SELECT * FROM chat.message");
-          while ($row = $res->fetch_assoc()) {
+          $res = mysqli_query($conn, "SELECT * FROM chat.message");
+
+          while ($row = mysqli_fetch_assoc($res)) {
             if ($row['isMessage'] === '1') {
               show_message($row);
             } else {
               show_phonecall($row);
             }
           }
+          mysqli_close($con);
         ?>
 
         <div class="row comment-box-main p-3 rounded-bottom">

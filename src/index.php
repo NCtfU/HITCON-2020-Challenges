@@ -1,3 +1,11 @@
+<?php
+
+session_start();
+if (isset($_SESSION['username'])) {
+	header("Location: chat.php");
+}
+
+?>
 <html>
     <head>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -16,7 +24,7 @@
           </div>
 
           <!-- Login Form -->
-          <form>
+          <form action='login.php' method="POST">
             <input type="text" id="login" class="fadeIn second" name="username" placeholder="login">
             <input type="text" id="password" class="fadeIn third" name="password" placeholder="password">
             <input type="submit" class="fadeIn fourth" value="Log In">
