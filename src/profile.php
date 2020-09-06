@@ -1,6 +1,7 @@
 <?php
 
 require_once('config.php');
+session_start();
 
 ?>
 
@@ -45,7 +46,15 @@ require_once('config.php');
           }
 
           function show_message($row, $icon) {
-            $message = ($row['deleted'] === '1') ? '[已刪除訊息]' : $row['msg'];
+            if ($row['deleted'] !== '1') {
+              $message = $row['msg'];
+            } else {
+              $message = '[已刪除訊息] ';
+              if ($_SESSION['username'] === $row['name']) {
+                $message = $message . $row['msg'];
+              }
+              $message = '<span class="deleted">' . $message . '</span>';
+            }
             ?>
         <ul class="p-0">
           <li>

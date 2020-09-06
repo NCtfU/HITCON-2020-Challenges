@@ -64,6 +64,10 @@ body{
   color: #BFBFA8;
   cursor: pointer;
 }
+.comments .comment .deleted {
+  color: #e0e0e0;
+  font-style: italic;
+}
 .comments .comment .active {
   opacity: 1;
 }
