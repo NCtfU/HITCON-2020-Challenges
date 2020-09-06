@@ -4,12 +4,12 @@
 -- FLUSH PRIVILEGES;
 
 ---- Create database
--- CREATE DATABASE chat;
+CREATE DATABASE chat;
 -- GRANT ALL PRIVILEGES ON chat.* TO chat@localhost;
 -- FLUSH PRIVILEGES;
 
 ---- Create table: users
-DROP TABLE chat.users;
+-- DROP TABLE chat.users;
 CREATE TABLE chat.users (username CHAR(10), password CHAR(15), icon CHAR(15),
                          account_type INT, last_active INT);
 INSERT INTO chat.users VALUES ('BBBBB', 'nc7FU_W3LL',  'man01.png', 0, 1);
@@ -21,7 +21,7 @@ INSERT INTO chat.users VALUES ('david', 'Hand50M3',    'default.png', 2, 0);
 INSERT INTO chat.users VALUES ('yen',   '84D_9uy',     'default.png', 2, 0);
 
 ---- Create table: message
-DROP TABLE chat.message;
+-- DROP TABLE chat.message;
 CREATE TABLE chat.message (isMessage BOOL, deleted BOOL, name VARCHAR(15), time INT,
                            call_duration CHAR(11), msg TEXT);
 

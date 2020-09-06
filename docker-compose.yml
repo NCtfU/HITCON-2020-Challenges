@@ -24,8 +24,8 @@ services:
       ]
     volumes:
       - ./mysql/setup_db.sql:/docker-entrypoint-initdb.d/init.sql:ro
-      # - mysql-data:/var/lib/mysql:rw
-      # - mysql-config:/etc/mysql:rw
+      - mysql-data:/var/lib/mysql:rw
+      - mysql-config:/etc/mysql:rw
     environment: 
       MYSQL_ROOT_PASSWORD: nctfu
     restart: always

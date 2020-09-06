@@ -13,7 +13,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 	$username = $_POST['username'];
 	$password = $_POST['password'];
 
-	$sql = "SELECT username, password FROM chat.users WHERE username='$username' and password='$password'";
+	$sql = "SELECT username, password FROM users WHERE username='$username' and password='$password'";
 	$result = mysqli_query($conn, $sql);
 	$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
