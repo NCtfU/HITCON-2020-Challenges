@@ -118,6 +118,11 @@ body{
   text-decoration: none;
 }
 
+/* sidebar */
+.sidebar .btn {
+  width: 100%;
+}
+
 /* icon attribute */
 .footer {
   bottom: 0;

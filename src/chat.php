@@ -12,7 +12,6 @@ require_once('config.php');
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style/chat.css">
-    <script src="script/chat.js"></script>
   </head>
   <body>
   <div class="container">
@@ -20,67 +19,55 @@ require_once('config.php');
       <div class="col-md-6 offset-md-3 col-sm-6 offset-sm-3 col-12 comments-main pt-4 rounded">
 
         <?php
-          function show_message($row) {
-            $msg = $row['msg'];
-
-            // deletion check
-            if ($row['deleted'] === '1') {
-              $msg = '[已刪除訊息]';
-            }
-
-            // image replacement if checksum matched
-            if ($msg > 10000) {
-              $data = base64_decode($msg);
-              if (md5($data) === '7efc02dbad7f35c170ff690c5b288126') {
-                $msg = '<img src="data:image/jpg;base64,' . $data . '>';
-              } else {
-                error_log('Warning: Checksum of the image not matched!');
-              }
-            }
-
-            $fmt = <<<EOF
+          function show_message($row, $icon) {
+            $message = ($row['deleted'] === '1') ? '[已刪除訊息]' : $row['msg'];
+            ?>
         <ul class="p-0">
           <li>
             <div class="row comments mb-2">
               <div class="col-md-2 col-sm-2 col-3 text-center user-img">
-                <img id="profile-photo" src="res/%s" class="rounded-circle" />
+                <img id="profile-photo" src="res/<?= $icon?>" class="rounded-circle" />
               </div>
               <div class="col-md-9 col-sm-9 col-9 comment rounded mb-2">
-                <h4 class="m-0"><a href="profile.php?name=%s">%s</a></h4>
-                <time class="text-white ml-3">%s 天前</time>
+                <h4 class="m-0"><a href="profile.php?name=<?= $row['name']?>"><?= $row['name']?></a></h4>
+                <time class="text-white ml-3"><?= $row['time']?> 天前</time>
                 <like></like>
-                <p class="mb-0 text-white">%s</p>
+                <p class="mb-0 text-white"><?= $message?></p>
               </div>
             </div>
           </li>
         </ul>
-EOF;
-            printf($fmt, $row['icon'], $row['name'], $row['name'], $row['time'], $msg);
+            <?php
           }
 
           function show_phonecall($row) {
-            $fmt = <<<EOF
+            ?>
         <ul class="p-0">
           <li>
             <div class="row comments mb-2">
               <div class="col-md-9 col-sm-9 col-9 comment phone rounded mb-2">
-                <img id="phone-icon" src="res/%s" class="rounded-circle mr-1" />
-                <h5 class="m-0">通話已結束</h5><h6 class="ml-2">%s minutes</h6>
-                <time class="text-white ml-3">%s 天前</time>
+                <img id="phone-icon" src="res/phone.svg" class="rounded-circle mr-1" />
+                <h5 class="m-0">通話已結束</h5><h6 class="ml-2"><?= $row['call_duration']?> minutes</h6>
+                <time class="text-white ml-3"><?= $row['time']?> 天前</time>
               </div>
             </div>
           </li>
         </ul>
-EOF;
-            printf($fmt, $row['icon'], $row['call_duration'], $row['time']);
+            <?php
+          }
+
+          // fetch user icons
+          $result = mysqli_query($conn, "SELECT username, icon FROM chat.users");
+          $icons = array();
+          while ($row = mysqli_fetch_assoc($result)) {
+            $icons[$row['username']] = $row['icon'];
           }
 
           // fetch messages
-          $res = mysqli_query($conn, "SELECT * FROM chat.message");
-
-          while ($row = mysqli_fetch_assoc($res)) {
+          $result = mysqli_query($conn, "SELECT * FROM chat.message");
+          while ($row = mysqli_fetch_assoc($result)) {
             if ($row['isMessage'] === '1') {
-              show_message($row);
+              show_message($row, $icons[$row['name']]);
             } else {
               show_phonecall($row);
             }
@@ -97,9 +84,15 @@ EOF;
           </div>
         </div>
       </div>
-    <form action='logout.php' method='GET'>
-      <button type='submit' class="btn btn-warning">Logout</button>
-    </form>
+      <div class="ml-2 sidebar">
+        <form action='profile.php' method='GET' class="mb-2">
+          <input type="hidden" name="name" value="<?= $_SESSION['username']?>">
+          <button type="submit" class="btn btn-primary">Profile</button>
+        </form>
+        <form action='logout.php' method='GET'>
+          <button type='submit' class="btn btn-warning">Logout</button>
+        </form>
+      </div>
     </div>
   </div>
   <p class="ml-3 footer">Icons made by <a href="https://www.flaticon.com/authors/those-icons" title="Those Icons">Those Icons</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a></p>
