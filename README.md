@@ -7,8 +7,8 @@
 - [x] 進入 chat 的網頁漏洞
 
 ## How to build?
-- require:
-  - docker
+- Require:
+  - [docker](https://docs.docker.com/engine/install/)
   - [docker-compose](https://docs.docker.com/compose/install/)
 - start: `docker-compose up`
 - down: `docker-compose down` or if you want to rm volumes `docker-compose down -v`
