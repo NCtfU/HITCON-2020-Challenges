@@ -27,7 +27,7 @@ services:
       - mysql-data:/var/lib/mysql:rw
       - mysql-config:/etc/mysql:rw
     environment: 
-      MYSQL_ROOT_PASSWORD: nctfu
+      MYSQL_ROOT_PASSWORD: nctfuchathc
     restart: always
 
 volumes: 
