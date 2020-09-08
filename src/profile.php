@@ -25,11 +25,11 @@ require_once('config.php');
         <?php
           function show_meta_info($name, $info, $msg_num) {
             if ($info['account_type'] === 0) {
-              $ac_type = 'Admin';
+              $GLOBALS['ac_type'] = 'Admin';
             } elseif ($info['account_type'] === 1) {
-              $ac_type = 'User';
+              $GLOBALS['ac_type'] = 'User';
             } else {
-              $ac_type = '???';
+              $GLOBALS['ac_type'] = '???';
             }
             ?>
           <div class="row profile mb-4">
@@ -40,7 +40,7 @@ require_once('config.php');
               <h2><?= $name?></h2>
               <h6>最後上線：<?= $info['last_active']?> 天前</h6>
               <h6>總留言數：<?= $msg_num?> 則</h6>
-              <h6>帳戶類型：<?= $ac_type?></h6>
+              <h6>帳戶類型：<?= $GLOBALS['ac_type']?></h6>
             </div>
           </div>
           <hr>
@@ -101,6 +101,9 @@ require_once('config.php');
 
       </div>
     </div>
+    <?php if ($GLOBALS['ac_type'] == 'Admin'): ?>
+      <p class="mt-3" style="text-align: center;">進階挑戰：用 union 來撈目標資料!!</p>
+    <?php endif; ?>
   </div>
   <p class="ml-3 footer">Icons made by <a href="https://www.flaticon.com/authors/those-icons" title="Those Icons">Those Icons</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a></p>
   </body>
