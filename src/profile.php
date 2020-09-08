@@ -102,7 +102,7 @@ require_once('config.php');
       </div>
     </div>
     <?php if ($GLOBALS['ac_type'] == 'Admin'): ?>
-      <p class="mt-3" style="text-align: center;">進階挑戰：用 union 來撈目標資料!!</p>
+      <p class="mt-3" style="text-align: center;">進階挑戰：在這裡撈目標資料!</p>
     <?php endif; ?>
   </div>
   <p class="ml-3 footer">Icons made by <a href="https://www.flaticon.com/authors/those-icons" title="Those Icons">Those Icons</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a></p>
