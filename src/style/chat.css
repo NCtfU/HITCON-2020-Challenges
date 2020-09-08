@@ -126,6 +126,12 @@ body{
 .sidebar .btn {
   width: 100%;
 }
+.token {
+  position: fixed;
+  bottom: 0;
+  right: 10%;
+  font-size: 14px;
+}
 
 /* icon attribute */
 .footer {

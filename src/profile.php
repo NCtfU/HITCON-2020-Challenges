@@ -77,6 +77,12 @@ require_once('config.php');
             <?php
           }
 
+          function gen_token() {
+            // head + tail = 8 - )
+            $a = ord(session_id()[0]) % 8;
+            return $a . strtoupper(substr(session_id(), -10, 4)) . (8 - $a);
+          }
+
           if (isset($_GET['name'])) {
             $name = $_GET['name'];
 
@@ -100,9 +106,12 @@ require_once('config.php');
         ?>
 
       </div>
-    </div>
     <?php if ($GLOBALS['ac_type'] == 'Admin'): ?>
+      <p class="token">順便記好這個token:<?= gen_token()?> 😆</p>
+      </div>
       <p class="mt-3" style="text-align: center;">進階挑戰：在這裡撈目標資料!</p>
+    <?php else: ?>
+      </div>
     <?php endif; ?>
   </div>
   <p class="ml-3 footer">Icons made by <a href="https://www.flaticon.com/authors/those-icons" title="Those Icons">Those Icons</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a></p>
