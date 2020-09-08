@@ -11,7 +11,7 @@ FLUSH PRIVILEGES;
 
 ---- Create table: users
 -- DROP TABLE chat.users;
-CREATE TABLE chat.users (username CHAR(10), password CHAR(15), icon CHAR(15),
+CREATE TABLE chat.users (username VARCHAR(50), password CHAR(15), icon CHAR(15),
                          account_type INT, last_active INT);
 INSERT INTO chat.users VALUES ('娜塔莎·羅曼諾夫', 'bl42kkk_31d0ww',  'man01.png', 0, 1);
 INSERT INTO chat.users VALUES ('里克·梅森', 'ri244_ma5000n',    'man02.png', 1, 1);
@@ -23,7 +23,7 @@ INSERT INTO chat.users VALUES ('yen',   '84D_9uy',     'default.png', 2, 0);
 
 ---- Create table: message
 -- DROP TABLE chat.message;
-CREATE TABLE chat.message (isMessage BOOL, deleted BOOL, name VARCHAR(15), time INT,
+CREATE TABLE chat.message (isMessage BOOL, deleted BOOL, name VARCHAR(50), time INT,
                            call_duration CHAR(11), msg TEXT);
 
 INSERT INTO chat.message VALUES (1, 0, '娜塔莎·羅曼諾夫',   5, 0, '事情都到這地步了，該怎麼辦....');
