@@ -1,12 +1,13 @@
 ---- Create user
--- INSERT INTO mysql.user (User, Host, authentication_string, ssl_cipher, x509_issuer, x509_subject)
---    VALUES ('chat', 'localhost', PASSWORD('nctfuchat0905hc'), '', '', '');
--- FLUSH PRIVILEGES;
+CREATE USER chat@'localhost' IDENTIFIED BY 'nctfuchathc';
+CREATE USER chat@'%' IDENTIFIED BY 'nctfuchathc';
+FLUSH PRIVILEGES;
 
 ---- Create database
 CREATE DATABASE chat;
--- GRANT ALL PRIVILEGES ON chat.* TO chat@localhost;
--- FLUSH PRIVILEGES;
+GRANT SELECT ON chat.* TO chat@'localhost';
+GRANT SELECT ON chat.* TO chat@'%';
+FLUSH PRIVILEGES;
 
 ---- Create table: users
 -- DROP TABLE chat.users;
