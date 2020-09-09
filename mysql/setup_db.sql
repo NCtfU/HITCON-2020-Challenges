@@ -17,7 +17,7 @@ INSERT INTO chat.users VALUES ('小辣椒', 'bl42kkk_31d0ww',  'man01.png', 0, 1
 INSERT INTO chat.users VALUES ('霍根', 'ri244_ma5000n',    'man02.png', 1, 1);
 INSERT INTO chat.users VALUES ('蜘蛛人', 'R3D_6u4rd14n',     'man04.png', 1, 2);
 INSERT INTO chat.users VALUES ('Lily',  'wh0_15_111y', 'man03.png', 1, 2);
-INSERT INTO chat.users VALUES ('autis', 'cut3',        'default.png', 2, 0); -- 放進去誰嗎?
+INSERT INTO chat.users VALUES ('artis', 'cut3',        'default.png', 2, 0); -- 放進去誰嗎?
 INSERT INTO chat.users VALUES ('david', 'Hand50M3',    'default.png', 2, 0);
 INSERT INTO chat.users VALUES ('yen',   '84D_9uy',     'default.png', 2, 0);
 
