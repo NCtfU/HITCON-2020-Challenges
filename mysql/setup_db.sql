@@ -40,3 +40,4 @@ INSERT INTO chat.message VALUES (1, 0, '霍根',   2, 0, '話說我們要不換�
 INSERT INTO chat.message VALUES (1, 0, 'Lily',    2, 0, '同意+1');
 INSERT INTO chat.message VALUES (1, 1, '小辣椒',   2, 0, '改用這個好了，密碼老樣子');
 INSERT INTO chat.message VALUES (1, 1, '小辣椒',   2, 0, '? qqgnoe 的 url 咧');
+INSERT INTO chat.message VALUES (1, 1, 'Lily',   2, 0, 'http:140.115.59.92:10201 啦~');
