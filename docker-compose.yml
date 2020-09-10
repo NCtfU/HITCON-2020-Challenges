@@ -34,7 +34,7 @@ services:
     container_name: tinyhttpd
     restart: always
     volumes:
-      - ./yein/htdocs:/htdocs
+      - ./yen/htdocs:/htdocs
     ports:
       - "10201:10201" 
 
