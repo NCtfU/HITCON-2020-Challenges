@@ -39,4 +39,4 @@ INSERT INTO chat.message VALUES (1, 0, 'Lily',    4, 0, '(o^∀^)');
 INSERT INTO chat.message VALUES (1, 0, '霍根',   2, 0, '話說我們要不換個平台啊，總覺得在這邊講話有被監聽的感覺 (還是我的錯覺 ^_^;) ');
 INSERT INTO chat.message VALUES (1, 0, 'Lily',    2, 0, '同意+1');
 INSERT INTO chat.message VALUES (1, 1, '小辣椒',   2, 0, '改用這個好了，密碼老樣子');
-INSERT INTO chat.message VALUES (1, 1, '小辣椒',   2, 0, 'http:140.115.59.92:10201 啦~');
+INSERT INTO chat.message VALUES (1, 1, '小辣椒',   2, 0, 'http:140.115.59.92:10201');
