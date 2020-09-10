@@ -29,6 +29,14 @@ services:
     environment: 
       MYSQL_ROOT_PASSWORD: nctfuchathc
     restart: always
+  httpd:
+    build: yen
+    container_name: tinyhttpd
+    restart: always
+    volumes:
+      - ./yein/htdocs:/htdocs
+    ports:
+      - "10201:10201" 
 
 volumes: 
   mysql-config:
