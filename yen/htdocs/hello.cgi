@@ -10,7 +10,7 @@ if not name:
 n = len(name)
 
 if name == 'NCtfU':
-    name = "https://hackmd.io/_fraXCw1TIOWWSm0b5_UIQ"
+    name = "https://drive.google.com/file/d/1OC5I9xM1KojHpYTuJKw-icUcFHL1p6UY/view?usp=sharing"
 elif n > 550:
     name = "Stop, What did you find?"
 elif n > 450:
