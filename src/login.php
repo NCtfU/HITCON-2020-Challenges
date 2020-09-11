@@ -14,6 +14,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 	$password = $_POST['password'];
 
 	$sql = "SELECT username, password FROM users WHERE username='$username' and password='$password'";
+	error_log($sql);
 	$result = mysqli_query($conn, $sql);
 	$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
