@@ -42,7 +42,7 @@
         PORT = 8000
     ```
     - 好像滿多人卡在這邊，因為中間夾了一串 `"azce"`，直接連會連不上。
-        > 這部分我們可能設計得不太好，因為凱撒加密預設是只處理英文的部分，不處理數字。因此，最後就變成了英文做 rotation 但數字不做，確實滿令人困惑的 :sweat_smile:
+        > 這部分我們可能設計得不太好，因為凱撒加密預設是只處理英文的部分，不處理數字。因此，最後就變成了英文做 rotation 但數字不做，確實滿令人困惑的 :sweat_smile:  
         > 然後還有一個雷點，就是某人一開始寫明文訊息寫得很開心，一不小心就生出長度為 93 的密文了XDD 還好有學長們幫忙 debug :pray:
     
 
@@ -156,8 +156,12 @@
     Hint2: zsteg
     ```
 - 提示2為 `zsteg`。它是一個圖片隱寫檢測工具（[連結](https://ctf-wiki.github.io/ctf-wiki/misc/picture/png-zh/)），可以找出由[LSB](https://ctf-wiki.github.io/ctf-wiki/misc/picture/png-zh/)隱寫在圖片內的資訊。
-- 使用 `zsteg qrcode.png` 得到下一階段的網址
+- 使用 `zsteg qrcode.png` 得到最終的網址
     ![](https://i.imgur.com/irNjADb.png)
+
+- 原來是一場生日派對啊！！
+
+![](https://i.imgur.com/Xgwqs9f.png)
 
 
 ## 0xA: Scoreboard
