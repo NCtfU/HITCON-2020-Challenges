@@ -1,3 +1,15 @@
+# HITCON-2020 NCtfU Challenges
+
+- HITCON 社群擺攤的題目設計。
+- Writeup 請見 https://hackmd.io/f6F44XrDSDW5MV9zMn1t2A。
+
+## Designers
+
+- Crypto by [JyunD](https://github.com/JyunD)
+- Web by [cc85nod](https://github.com/cc85nod) and [davidhcefx](https://github.com/davidhcefx)
+- Pwn by [qqgnoe466263](https://github.com/qqgnoe466263)
+- Stego by [Artis24106](https://github.com/Artis24106)
+
 
 ## How to build?
 
@@ -7,7 +19,3 @@
 
 - start: `sudo docker-compose up`
 - down: `sudo docker-compose down` or if you want to rm volumes `docker-compose down -v`
-
-## Preview
-
-- Preview it at http://166f8c6d0bdb.ngrok.io/
