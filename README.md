@@ -1,7 +1,7 @@
 # HITCON-2020 NCtfU Challenges
 
 - HITCON 社群擺攤 hacking 101 的題目設計。
-- Writeup 請見 https://hackmd.io/f6F44XrDSDW5MV9zMn1t2A。
+- Writeup 請見 https://hackmd.io/f6F44XrDSDW5MV9zMn1t2A 。
 
 ## Designers
 
