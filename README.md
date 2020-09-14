@@ -11,7 +11,7 @@
 - Stego by [Artis24106](https://github.com/Artis24106)
 
 
-## How to build?
+## How to build
 
 - Require:
   - [docker](https://docs.docker.com/engine/install/)
